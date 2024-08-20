@@ -1,5 +1,3 @@
-Thumbs.db*
-.DS_Store
 HELP.md
 .gradle
 build/
@@ -38,8 +36,3 @@ out/
 *.zip
 *.tar.gz
 *.rar
-
-### Exclusions ###
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**
-!**/src/test/**
