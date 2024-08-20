@@ -4,12 +4,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import ru.netology.delivery.data.Generate;
+
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static ru.netology.delivery.data.generate.generateDate;
 
+import ru.netology.delivery.data.generate;
 class DeliveryTest {
 
     @BeforeEach
@@ -20,11 +22,11 @@ class DeliveryTest {
     @Test
     @DisplayName("Should successful plan and replan meeting")
     void shouldSuccessfulPlanAndReplanMeeting() {
-        var validUser = Generate.Registration.generateUser("ru");
+        var validUser = generate.Registration.generateUser("ru");
         var daysToAddForFirstMeeting = 4;
-        var firstMeetingDate = Generate.generateDate(daysToAddForFirstMeeting);
+        var firstMeetingDate = generate.generateDate(daysToAddForFirstMeeting);
         var daysToAddForSecondMeeting = 7;
-        var secondMeetingDate = Generate.generateDate(daysToAddForSecondMeeting);
+        var secondMeetingDate = generate.generateDate(daysToAddForSecondMeeting);
 
         $("[data-test-id='city'] input").setValue(validUser.getCity());
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
